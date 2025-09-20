@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Klyvin Partners & Recruitment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logorw.png" style="width: 80px; height: 80px;" alt="Klyvin Logo">
+      </a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="partners.html">Partners</a></li>
+    </ul>
+    <!--<a href="#" class="cta-btn bntnav" id="navBookBtn">Book Us</a>-->
+  </nav>
+
+  <!-- Partners Hero Section -->
+  <section class="partners-hero">
+    <div>
+      <h1>Become a <span>Partner</span> or Join Our Team</h1>
+      <p>Work with Klyvin to deliver top-notch tech solutions to our clients.</p>
+    </div>
+  </section>
+
+  <!-- Partners About Section -->
+  <section class="partners-about">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>Why Partner With Us?</h2>
+        <p>
+          We’re always looking for talented individuals and teams to join our network of partners. If you have skills in any of our service areas—Website Development, Office Network Setup, Graphic Design, or Software Development—apply below to collaborate or get recruited for projects.
+        </p>
+        <ul>
+          <li>Freelancers & Agencies welcome</li>
+          <li>Remote & On-site opportunities</li>
+          <li>Project-based or long-term</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners Contact Section -->
+  <section class="partners-contact-section">
+    <div class="partners-contact-card">
+      <h2>Apply to Partner or Join</h2>
+      <form id="partnerForm">
+        <div class="form-group">
+          <input type="text" id="partnerName" name="partnerName" placeholder="Full Name*" required />
+        </div>
+        <div class="form-group">
+          <input type="email" id="partnerEmail" name="partnerEmail" placeholder="Email*" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" id="partnerPhone" name="partnerPhone" placeholder="Phone Number*" required />
+        </div>
+        <div class="form-group">
+          <select id="partnerService" name="partnerService" required>
+            <option value="">Select Service Area*</option>
+            <option value="Website Development">Website Development</option>
+            <option value="Office Network Setup">Office Network Setup</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Software Development">Software Development</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="partnerMessage" name="partnerMessage" placeholder="Tell us about your experience, skills, or portfolio links..." rows="5" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Apply Now</button>
+      </form>
+    </div>
+  </section>
+  
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <img src="images/logorw.png" alt="Company Logo" />
+        <p>Creating Exciting Applications For The Future..</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+          <li><a href="partners.html">Partners</a></li>
+        </ul>
+      </div>
+      <div class="footer-socials">
+        <h4>Connect With Us</h4>
+        <div class="social-icons">
+          <a href="https://wa.me/233539416658" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://instagram.com/klyvin" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Klyvin. CEO Kelvin Nii Amu Okai.</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+
+  <script>
+    // Simple form handler: send application via WhatsApp
+    document.getElementById("partnerForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("partnerName").value.trim();
+      const email = document.getElementById("partnerEmail").value.trim();
+      const phone = document.getElementById("partnerPhone").value.trim();
+      const service = document.getElementById("partnerService").value;
+      const message = document.getElementById("partnerMessage").value.trim();
+
+      const baseMessage = `Hello Klyvin Team,
+I'm applying to be a partner or join your team.
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Service Area: ${service}
+
+About Me:
+${message}`;
+
+      const encodedMessage = encodeURIComponent(baseMessage);
+      const whatsappNumber = "233539416658";
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+      window.open(whatsappURL, "_blank");
+      this.reset();
+      alert("Your application will be sent via WhatsApp. Thank you!");
+    });
+  </script>
+</body>
+</html>
