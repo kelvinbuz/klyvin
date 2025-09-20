@@ -708,7 +708,7 @@ textarea {
 /* --- Partners Page Pro Styling --- */
 .partners-hero {
   position: relative;
-  height: 45vh;
+  height: 60vh;
   width: 100%;
   background: linear-gradient(90deg, #8d939b 0%, #dbdfe6 100%);
   display: flex;
@@ -861,4 +861,5 @@ textarea {
     padding: 25px 10px;
   }
 }
+
 
